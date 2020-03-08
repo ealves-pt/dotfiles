@@ -3,6 +3,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " GENERAL IMPROVEMENTS
 
+" Helpers
+Plug 'christianrondeau/vim-base64'
+
 " File context type
 Plug 'Shougo/context_filetype.vim'
 
@@ -14,14 +17,10 @@ Plug 'ervandew/supertab'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': [
-        \ 'bash install.sh',
+        \ './install.sh',
         \ 'npm i -g javascript-typescript-langserver'
       \ ],
     \ }
-
-" Snippets
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 
 " Color
 Plug 'flazz/vim-colorschemes'
@@ -44,7 +43,9 @@ Plug 'jiangmiao/auto-pairs'
 
 " Comments
 Plug 'tyru/caw.vim'
-" Plug 'kana/vim-operator-user' " to add motion support for caw.vim
+
+" Snippets
+Plug 'SirVer/ultisnips'
 
 " Surrounding helpers
 Plug 'tpope/vim-surround'
@@ -53,7 +54,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" buffer explorer
+" Buffer explorer
 Plug 'jlanzarotta/bufexplorer'
 
 " Search & Navigation
@@ -61,10 +62,12 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'junegunn/vim-easy-align'
 
 " LANGUAGE/USAGE SPECIFIC
 " Comment the ones you don't require
+
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Jenkinsfile
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -74,19 +77,24 @@ Plug 'groenewege/vim-less'
 
 " Docker
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'deoplete-plugins/deoplete-docker', { 'do': 'make' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'zchee/deoplete-go', { 'do': 'make' }
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 
 " JavaScript
 Plug 'pangloss/vim-javascript'
-Plug 'othree/jspc.vim'
 
 " Vue.js
 Plug 'posva/vim-vue'
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'mhartington/nvim-typescript', {
+    \ 'do': [
+        \ './install.sh',
+        \ ':UpdateRemotePlugins'
+      \ ],
+    \ }
 call plug#end()

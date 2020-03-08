@@ -9,6 +9,9 @@
 set autoread
 set background=dark
 
+" Set signcolumn to auto and allow multiple signs
+set signcolumn=auto:9
+
 " Fold level on new buffers
 set foldlevelstart=99
 
@@ -39,11 +42,8 @@ set mouse=a
 set autoindent
 set smartindent
 
-" Prevent scan on included files
-" set complete-=i
-
 " Setup complete
-set completeopt=menuone,noinsert,noselect,preview
+set completeopt=menuone,noinsert,noselect
 
 " Show diff in a vertical line
 set diffopt=filler,vertical
@@ -64,15 +64,6 @@ set expandtab smarttab
 
 " Always utf8
 set termencoding=utf-8 fileencoding=utf-8
-
-set ttyfast
-
-" Turn off visualbell, because it's annoying
-" set novisualbell
-" set vb t_vb=
-
-" Wildcard of files to maybe ignore, this might need a rethink
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,/vendor/*,*/\.git/*
 
 " Set virtual edit
 set virtualedit=block

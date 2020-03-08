@@ -49,14 +49,14 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+" Git
+let g:gitgutter_map_keys = 0
+
 " Comments
 let g:caw_operator_keymappings = 1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-
-" neosnippet
-let g:neosnippet#enable_completed_snippet = 1
 
 " LanguageClient-neovim
 let g:LanguageClient_autoStart = 1
@@ -64,35 +64,62 @@ let g:LanguageClient_serverCommands = {}
 
 " LANGUAGE
 
+"" Markdown
+
+" iamcco/markdown-preview.nvim
+
+let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 1
+let g:mkdp_refresh_slow = 0
+let g:mkdp_command_for_global = 0
+let g:mkdp_open_to_the_world = 0
+let g:mkdp_open_ip = ''
+let g:mkdp_browser = 'google-chrome'
+let g:mkdp_echo_preview_url = 0
+let g:mkdp_browserfunc = ''
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {}
+    \ }
+let g:mkdp_markdown_css = ''
+let g:mkdp_highlight_css = ''
+let g:mkdp_port = ''
+let g:mkdp_page_title = '「${name}」'
+
 "" Go
 
 " fatih/vim-go
+let g:go_def_mapping_enabled = 0
 let g:go_addtags_transform = "snakecase"
 let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
-let g:go_term_enabled = 1
-let g:go_term_mode = "split"
-let g:go_snippet_engine = "neosnippet"
-" if executable('gopls')
-"   let g:go_def_mode = 'gopls'
-" else
-"   echo "'gopls' not installed!\n"
-"   :cq
-" endif
+let g:go_snippet_engine = 'ultisnips'
 
-"" JavaScript/JSX
+"" JavaScript/TypeScript
 
-" let g:LanguageClient_serverCommands = {}
+" mhartington/nvim-typescript
+
+let g:LanguageClient_serverCommands = {
+  \ 'javascript': ['javascript-typescript-stdio'],
+  \ 'typescript': ['javascript-typescript-stdio']
+\ }
 if executable('javascript-typescript-stdio')
-  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
   " Use LanguageServer for omnifunc completion
   autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+  autocmd FileType typescript setlocal omnifunc=LanguageClient#complete
 else
   echo "javascript-typescript-stdio not installed!\n"
   :cq

@@ -1,6 +1,12 @@
 " Keys and Shortcuts
 
-" GENERAL
+"" GENERAL
+
+" ----------------------------------------------------------------------------
+" Map leader
+" ----------------------------------------------------------------------------
+let mapleader = ' '
+let maplocalleader = ' '
 
 " ----------------------------------------------------------------------------
 "  Disabling arrow keys for navigation
@@ -11,10 +17,12 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " ----------------------------------------------------------------------------
-" Map leader
+" Resize splits
 " ----------------------------------------------------------------------------
-let mapleader = ' '
-let maplocalleader = ' '
+nnoremap <C-Up> <C-w>+
+nnoremap <C-Down> <C-w>-
+nnoremap <C-Left> <C-w><
+nnoremap <C-Right> <C-w>>
 
 " ----------------------------------------------------------------------------
 " Clipboard
@@ -68,24 +76,24 @@ xnoremap > >gv
 nnoremap <C-n> :NERDTreeToggle<cr>
 
 " ----------------------------------------------------------------------------
-" vim-commentary
-" ----------------------------------------------------------------------------
-" map  gc  <Plug>Commentary
-" nmap gcc <Plug>CommentaryLine
-
-" ----------------------------------------------------------------------------
-" vim-fugitive
-" ----------------------------------------------------------------------------
-nmap     <Leader>g :Gstatus<CR>gg<c-n>
-nnoremap <Leader>d :Gdiff<CR>
-
-" ----------------------------------------------------------------------------
 " fzf
 " ----------------------------------------------------------------------------
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
 xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+
+" Git
+
+" ----------------------------------------------------------------------------
+" vim-fugitive
+" ----------------------------------------------------------------------------
+nmap <Leader>g :Git<CR>gg<c-n>
+nmap <Leader>d :Gdiffsplit<CR>
+nnoremap <silent> <Leader>ghp  :GitGutterPreviewHunk<CR>
+nnoremap <silent> <Leader>ghk :GitGutterPrevHunk<CR>
+nnoremap <silent> <Leader>ghj :GitGutterNextHunk<CR>
+nnoremap <silent> <Leader>ghu :GitGutterUndoHunk<CR>
 
 " LANGUAGE
 
@@ -95,11 +103,15 @@ xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
 autocmd FileType vue syntax sync fromstart
 
 " ----------------------------------------------------------------------------
+" TypeScript
+" ----------------------------------------------------------------------------
+autocmd FileType ts nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+" ----------------------------------------------------------------------------
 " Go
 " ----------------------------------------------------------------------------
-autocmd FileType go nmap <Leader>t <Plug>(go-test)
-autocmd FileType go nmap <Leader>b <Plug>(go-build)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-au FileType go nmap <Leader>gt :GoDeclsDir<cr>
-au FileType go nmap <Leader>ga <Plug>(go-alternate-edit)
-au FileType go nmap <F12> <Plug>(go-def)
+autocmd FileType go nnoremap <silent> <Leader>gr  :GoRename<CR>
+autocmd FileType go nnoremap <silent> <Leader>gd  :GoDef<CR>
+autocmd FileType go nnoremap <silent> <Leader>gdc :GoDebugContinue<CR>
+autocmd FileType go nnoremap <silent> <Leader>gdb :GoDebugBreakpoint<CR>
+autocmd FileType go nnoremap <silent> <Leader>gdn :GoDebugNext<CR>
