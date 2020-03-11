@@ -7,11 +7,17 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='molokai'
 
 " ale
-let g:ale_enabled = 0
-let g:ale_completion_enabled = 0
+let g:ale_enabled = 1
+let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'vue': ['eslint'],
+      \ 'typescript': ['tsserver', 'tslint']
+      \}
 
 " ale for airline
 let g:airline#extensions#ale#enabled = 1
@@ -58,16 +64,11 @@ let g:caw_operator_keymappings = 1
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-" LanguageClient-neovim
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {}
-
 " LANGUAGE
 
 "" Markdown
 
 " iamcco/markdown-preview.nvim
-
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
 let g:mkdp_refresh_slow = 0
@@ -107,20 +108,3 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
 let g:go_snippet_engine = 'ultisnips'
-
-"" JavaScript/TypeScript
-
-" mhartington/nvim-typescript
-
-let g:LanguageClient_serverCommands = {
-  \ 'javascript': ['javascript-typescript-stdio'],
-  \ 'typescript': ['javascript-typescript-stdio']
-\ }
-if executable('javascript-typescript-stdio')
-  " Use LanguageServer for omnifunc completion
-  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
-  autocmd FileType typescript setlocal omnifunc=LanguageClient#complete
-else
-  echo "javascript-typescript-stdio not installed!\n"
-  :cq
-endif

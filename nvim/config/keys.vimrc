@@ -35,13 +35,13 @@ noremap <Leader>p "+p
 " ----------------------------------------------------------------------------
 " Save
 " ----------------------------------------------------------------------------
-nnoremap <Leader>s :update<cr>
+nnoremap <Leader>s :update<CR>
 
 " ----------------------------------------------------------------------------
 " Quit
 " ----------------------------------------------------------------------------
-nnoremap <Leader>q :q<cr>
-nnoremap <Leader>Q :qa!<cr>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :qa!<CR>
 
 " ----------------------------------------------------------------------------
 " jk | Escaping!
@@ -59,12 +59,12 @@ nnoremap <S-tab> <c-w>W
 " ----------------------------------------------------------------------------
 " Moving lines
 " ----------------------------------------------------------------------------
-nnoremap <silent> <C-k> :move-2<cr>
-nnoremap <silent> <C-j> :move+<cr>
+nnoremap <silent> <C-k> :move-2<CR>
+nnoremap <silent> <C-j> :move+<CR>
 nnoremap <silent> <C-h> <<
 nnoremap <silent> <C-l> >>
-xnoremap <silent> <C-k> :move-2<cr>gv
-xnoremap <silent> <C-j> :move'>+<cr>gv
+xnoremap <silent> <C-k> :move-2<CR>gv
+xnoremap <silent> <C-j> :move'>+<CR>gv
 xnoremap <silent> <C-h> <gv
 xnoremap <silent> <C-l> >gv
 xnoremap < <gv
@@ -73,12 +73,12 @@ xnoremap > >gv
 " ----------------------------------------------------------------------------
 " nerdtree
 " ----------------------------------------------------------------------------
-nnoremap <C-n> :NERDTreeToggle<cr>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " ----------------------------------------------------------------------------
 " fzf
 " ----------------------------------------------------------------------------
-nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<CR>"
 nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
 xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
@@ -105,7 +105,7 @@ autocmd FileType vue syntax sync fromstart
 " ----------------------------------------------------------------------------
 " TypeScript
 " ----------------------------------------------------------------------------
-autocmd FileType ts nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+autocmd FileType typescript nnoremap <silent> <Leader>gd :TSDef<CR>
 
 " ----------------------------------------------------------------------------
 " Go

@@ -13,15 +13,6 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ervandew/supertab'
 
-" Autocomplete - LanguageClient-neovim
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': [
-        \ './install.sh',
-        \ 'npm i -g javascript-typescript-langserver'
-      \ ],
-    \ }
-
 " Color
 Plug 'flazz/vim-colorschemes'
 
@@ -75,13 +66,15 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 " Less
 Plug 'groenewege/vim-less'
 
+" Stylus
+Plug 'iloginow/vim-stylus'
+
 " Docker
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'deoplete-plugins/deoplete-docker', { 'do': 'make' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 
 " JavaScript
 Plug 'pangloss/vim-javascript'
@@ -92,9 +85,7 @@ Plug 'posva/vim-vue'
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {
-    \ 'do': [
-        \ './install.sh',
-        \ ':UpdateRemotePlugins'
-      \ ],
-    \ }
+      \ 'for': ['typescript', 'tsx'],
+      \ 'do': 'bash install.sh'
+      \ }
 call plug#end()
