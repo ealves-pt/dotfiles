@@ -10,8 +10,7 @@ Plug 'christianrondeau/vim-base64'
 Plug 'Shougo/context_filetype.vim'
 
 " Autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ervandew/supertab'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Color
 Plug 'flazz/vim-colorschemes'
@@ -20,9 +19,10 @@ Plug 'flazz/vim-colorschemes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Lint
-Plug 'w0rp/ale'
+" Plug 'dense-analysis/ale'
 
 " Misc
 " Emojis
@@ -48,11 +48,12 @@ Plug 'vim-airline/vim-airline-themes'
 " Buffer explorer
 Plug 'jlanzarotta/bufexplorer'
 
-" Search & Navigation
-Plug 'junegunn/fzf', { 'do': './install --all' }
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " LANGUAGE/USAGE SPECIFIC
 " Comment the ones you don't require
@@ -60,8 +61,14 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
+" Asciidoc
+Plug 'habamax/vim-asciidoctor'
+
 " Jenkinsfile
 Plug 'martinda/Jenkinsfile-vim-syntax'
+
+" JSON
+Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Less
 Plug 'groenewege/vim-less'
@@ -70,8 +77,8 @@ Plug 'groenewege/vim-less'
 Plug 'iloginow/vim-stylus'
 
 " Docker
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'deoplete-plugins/deoplete-docker', { 'do': 'make' }
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+" Plug 'deoplete-plugins/deoplete-docker', { 'do': 'make' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -84,8 +91,8 @@ Plug 'posva/vim-vue'
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {
-      \ 'for': ['typescript', 'tsx'],
-      \ 'do': 'bash install.sh'
-      \ }
+" Plug 'mhartington/nvim-typescript', {
+"      \ 'for': ['typescript', 'tsx'],
+"      \ 'do': 'bash install.sh'
+"      \ }
 call plug#end()

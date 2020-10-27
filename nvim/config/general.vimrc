@@ -1,75 +1,39 @@
-" General Vim Setup
-" Python 2/3 versions - HACK for the cases where deoplete won't load with the host
-" for whatever reason. No reason to uncomment otherwise
-" let g:python_host_prog="$HOME/.pyenv/versions/neovim2/bin/python"
-" let g:python3_host_prog="$HOME/.pyenv/versions/neovim3/bin/python"
+" General settings
+set autoread                                  " Automatically reload files when changed outside vim
+set clipboard=unnamed                         " Copy selected text to the primary clipboard in LINUX
+set background=dark                           " Adjust the dafault color groups for dark backgrounds
+set signcolumn=auto:9                         " Resize to accomodate up to 9 signs
+set nostartofline                             " Keep the cursor on the same column
+set scrolloff=5                               " Always keep some lines visible on screen
+set foldlevelstart=99                         " Never fold new buffers
+set laststatus=2                              " Last window always with a status line
+set nocursorline                              " Highlight screen line of the cursor
+set mouse=a                                   " Enable mouse clicks in all modes
+set autoindent                                " Copy indent from current line when starting a new line
+set smartindent                               " Do smart autoinden when starting a new line
+set completeopt=menuone,noinsert,noselect     " Configure completion
+set diffopt=filler,vertical                   " Set diff mode to show filler lines and split vertically
+set relativenumber                            " Show line numbers relative to cursor
+set showcmd                                   " Show Vim keystrokes/commands
+set wildmenu                                  " Set command-line completion to enhanced mode
+set wildmode=full                             " Complete the next full match
+set virtualedit=block                         " Set virtual edit in Visual block mode
+set nowrap                                    " Disable line wrap
+set expandtab smarttab                        " Use appropriate number of spaces to insert a tab
+set tabstop=2 softtabstop=2 shiftwidth=2      " Set all tabs to 2 width spaces
+set fileencoding=utf-8                        " Always set file encoding to UTF-8
+set synmaxcol=1000                            " Max number of columns to highlight
 
 " DEFAULTS
-" Autoread when file has been changed
-set autoread
-set background=dark
-
-" Set signcolumn to auto and allow multiple signs
-set signcolumn=auto:9
-
-" Fold level on new buffers
-set foldlevelstart=99
-
-" Default to PRIMARY clipboard in LINUX
-" if you want to use CLIPBOARD by default set to unnamedplus
-set clipboard=unnamed
-
-" Highlights current line in every window
-set nocursorline
-
-" keep the cursor on the same column
-set nostartofline
-
-" Show status line
-set laststatus=2
-
-" Keep some lines for context when scrolling
-set scrolloff=5
 
 " Set list
 set list
 set listchars=tab:\|\ ,
 
-" Use mouse
-set mouse=a
-
-" Indent
-set autoindent
-set smartindent
-
-" Setup complete
-set completeopt=menuone,noinsert,noselect
-
-" Show diff in a vertical line
-set diffopt=filler,vertical
-
-" Show line numbers
-set relativenumber
-
-" Show Vim keystrokes/commands
-set showcmd
-
-" Command line completion
-set wildmenu
-set wildmode=full
-
-" Set all tabs to 2 width spaces
-set tabstop=2 softtabstop=2 shiftwidth=2
-set expandtab smarttab
-
-" Always utf8
-set termencoding=utf-8 fileencoding=utf-8
-
-" Set virtual edit
-set virtualedit=block
-
-" Line wrap
-set nowrap
+" Enable lmap only
+set noimd
+set imi=1
+set ims=-1
 
 " Temporary files
 set backupdir=/tmp//,.
@@ -80,25 +44,6 @@ endif
 
 " Vim Syntax
 syntax on
-
-" Maximum number of column highlight
-set synmaxcol=1000
-
-" Enable lmap only
-set noimd
-set imi=1
-set ims=-1
-
-" MISC
-
-" Detect .md as markdown
-autocmd BufNewFile,BufReadPost *md set filetype=markdown
-
-" Stop highlighting underscores in Markdown, seriously, stop it
-autocmd BufNewFile,BufRead,BufEnter *.md,*.markdown :syntax match markdownIgnore "_"
-
-" Trim whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
 
 " Set starting colorscheme
 colorscheme cobalt2

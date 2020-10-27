@@ -83,7 +83,23 @@ nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
 xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
 
-" Git
+" ----------------------------------------------------------------------------
+" coc.nvim
+" ----------------------------------------------------------------------------
+" Bindings
+nmap <silent> <leader>df <Plug>(coc-definition)
+nmap <silent> <leader>dc <Plug>(coc-declaration)
+nmap <silent> <leader>im <Plug>(coc-implementation)
+nmap <silent> <leader>td <Plug>(coc-type-definition)
+nmap <silent> <leader>rf <Plug>(coc-references)
+nmap <silent> <leader>rn <Plug>(coc-rename)
+" Function objects
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+"" Git
 
 " ----------------------------------------------------------------------------
 " vim-fugitive
@@ -95,23 +111,3 @@ nnoremap <silent> <Leader>ghk :GitGutterPrevHunk<CR>
 nnoremap <silent> <Leader>ghj :GitGutterNextHunk<CR>
 nnoremap <silent> <Leader>ghu :GitGutterUndoHunk<CR>
 
-" LANGUAGE
-
-" ----------------------------------------------------------------------------
-" Vue
-" ----------------------------------------------------------------------------
-autocmd FileType vue syntax sync fromstart
-
-" ----------------------------------------------------------------------------
-" TypeScript
-" ----------------------------------------------------------------------------
-autocmd FileType typescript nnoremap <silent> <Leader>gd :TSDef<CR>
-
-" ----------------------------------------------------------------------------
-" Go
-" ----------------------------------------------------------------------------
-autocmd FileType go nnoremap <silent> <Leader>gr  :GoRename<CR>
-autocmd FileType go nnoremap <silent> <Leader>gd  :GoDef<CR>
-autocmd FileType go nnoremap <silent> <Leader>gdc :GoDebugContinue<CR>
-autocmd FileType go nnoremap <silent> <Leader>gdb :GoDebugBreakpoint<CR>
-autocmd FileType go nnoremap <silent> <Leader>gdn :GoDebugNext<CR>

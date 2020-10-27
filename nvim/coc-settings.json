@@ -1,0 +1,62 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [],
+
+  "diagnostic.enableHighlightLineNumber": false,
+  "diagnostic.errorSign": "ⓧ",
+  "diagnostic.hintSign": "ⓘ",
+  "diagnostic.infoSign": "ⓘ",
+  "diagnostic.warningSign": "ⓦ",
+  "diagnostic.maxWindowHeight": 30,
+  "diagnostic.maxWindowWidth": 200,
+
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".git/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true,
+        "completeUnimported": true
+      }
+    }
+  },
+
+  "signature.preferShownAbove":false,
+  "snippets.extends": {
+    "typescript": ["javascript"]
+  },
+  "snippets.ultisnips.directories": ["gosnippets/UltiSnips"],
+
+  "suggest.completionItemKindLabels": {
+    "class": "Class",
+    "color": "Color",
+    "constant": "Constant",
+    "enum": "Emun",
+    "enumMember": "EnumMember",
+    "event": "Event",
+    "field": "Field",
+    "file": "File",
+    "folder": "Folder",
+    "function": "Function",
+    "interface": "Interface",
+    "keyword": "Keyword",
+    "method": "Method",
+    "module": "Module",
+    "operator": "Operator",
+    "property": "Property",
+    "reference": "Reference",
+    "snippet": "Snippet",
+    "struct": "Struct",
+    "text": "Text",
+    "typeParameter": "TypeParam",
+    "unit": "Unit",
+    "value": "Value",
+    "variable": "Variable",
+    "default": "Default"
+  },
+  "suggest.defaultSortMethod": "alphabetical",
+
+  "suggest.maxPreviewWidth": 200,
+  "suggest.localityBonus": false,
+  "suggest.minTriggerInputLength": 2
+}

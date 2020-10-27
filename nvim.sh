@@ -1,28 +1,59 @@
 #!/bin/bash
 
+if ! command -v pip &> /dev/null
+then
+  echo 'pip could not be found'
+  echo 'install python'
+fi
+
+if ! command -v pip3 &> /dev/null
+then
+  echo 'pip3 could not be found'
+  echo 'install python3'
+fi
+
+if ! command -v npm &> /dev/null
+then
+  echo 'npm could not be found'
+  echo 'install node'
+fi
+
+if ! command -v go &> /dev/null
+then
+  echo 'go could not be found'
+  echo 'install go'
+fi
+
+if ! command -v ag &> /dev/null
+then
+  echo 'ag could not be found'
+  echo 'check https://github.com/ggreer/the_silver_searcher for install instructions'
+fi
+
 # Python
 echo 'Installing Neovim for Python'
-pip install neovim
+pip install pynvm
 
 # Python3
 echo 'Installing Neovim for Python3'
-pip3 install neovim
+pip3 install pynvm
 
 # Node
 echo 'Installing Neovim for node'
 npm install -g neovim
 
-# echo 'Installing vim-plug for Neovim'
-# curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-#    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Vim Plug
+echo 'Installing vim-plug for Neovim'
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# echo 'Installing fzf'
-# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# ~/.fzf/install
+# Fzf
+echo 'Installing fzf'
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
-# # Move all neovim settings over
-# # Put vim configurations in their place
-# echo 'Putting vim configurations in place. Be warned this will OVERWRITE your config/nvim/'
+# Move all neovim settings over
+# Put vim configurations in their place
 echo 'Setting up nvim'
 BASE=$(pwd)
 NVIM_CONFIG_PATH=~/.config/nvim
