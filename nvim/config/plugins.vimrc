@@ -22,24 +22,6 @@ let g:airline#extensions#default#layout = [
   \ [ 'x', 'y', 'z', 'error', 'warning' ]
   \ ]
 
-" " ======================== ale =========================
-" let g:ale_enabled = 0
-" let g:ale_completion_enabled = 0
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_sign_error = '✖'
-" let g:ale_sign_warning = '⚠'
-" let g:ale_linters_explicit = 1
-" let g:ale_linters = {
-"      \ 'javascript': ['eslint'],
-"      \ 'vue': ['eslint'],
-"      \ 'typescript': ['tsserver', 'tslint']
-"    \}
-"
-" " ================== ale-for-airline ===================
-" let g:airline#extensions#ale#enabled = 1
-" let g:airline#extensions#ale#error_symbol = '✖:'
-" let g:airline#extensions#ale#warning_symbol = '⚠:'
-
 " ====================== nerdtree ======================
 augroup nerd_loader
   autocmd!
@@ -103,12 +85,6 @@ hi default link CocInfoFloat Pmenu
 hi default link CocErrorFloat Pmenu
 hi default link CocWarningFloat Pmenu
 hi default link CocRustChainingHint Comment
-
-" ===================== deoplete =======================
-" let g:deoplete#enable_at_startup = 0
-" call deoplete#custom#option('omni_patterns', {
-"      \ 'go': '[^. *\t]\.\w*'
-"    \ })
 
 " LANGUAGE
 

@@ -2,9 +2,6 @@
 
 "" GENERAL
 
-" Trim whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
-
 "" LANGUAGE
 
 " ----------------------------------------------------------------------------

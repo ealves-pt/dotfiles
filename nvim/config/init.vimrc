@@ -91,8 +91,5 @@ Plug 'posva/vim-vue'
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'mhartington/nvim-typescript', {
-"      \ 'for': ['typescript', 'tsx'],
-"      \ 'do': 'bash install.sh'
-"      \ }
+
 call plug#end()
