@@ -21,9 +21,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Lint
-" Plug 'dense-analysis/ale'
-
 " Misc
 " Emojis
 " Cheatsheet: https://www.webpagefx.com/tools/emoji-cheat-sheet/
@@ -91,5 +88,8 @@ Plug 'posva/vim-vue'
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
+
+" Starlark
+Plug 'cappyzawa/starlark.vim'
 
 call plug#end()
