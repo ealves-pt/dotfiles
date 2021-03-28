@@ -45,5 +45,5 @@ endif
 " Vim Syntax
 syntax on
 
-" Set starting colorscheme
-colorscheme cobalt2
+" Enable color
+colorscheme nord

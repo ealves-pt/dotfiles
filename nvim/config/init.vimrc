@@ -12,8 +12,8 @@ Plug 'Shougo/context_filetype.vim'
 " Autocompletion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-" Color
-Plug 'flazz/vim-colorschemes'
+" Theme
+Plug 'arcticicestudio/nord-vim'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -75,7 +75,6 @@ Plug 'iloginow/vim-stylus'
 
 " Docker
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-" Plug 'deoplete-plugins/deoplete-docker', { 'do': 'make' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
