@@ -44,6 +44,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
+let g:NERDTreeShowHidden = 1
 
 " ======================== fzf =========================
 command! -bang -nargs=? -complete=dir Files
