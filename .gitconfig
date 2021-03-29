@@ -1,0 +1,20 @@
+[include]
+  # In this path you should setup your [user] configurations
+  # and anything else that you don't want to version
+  path = ~/.gitconfig_local
+
+[core]
+  editor = vim
+
+[fetch]
+  prune = true
+
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+
+[mergetool]
+  prompt = false
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
