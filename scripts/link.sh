@@ -22,15 +22,16 @@ link_file() {
     echo "link_file requires one argument"
     exit 1
   fi
-  if [ ! -f $target ]
-  then
-    echo "target should be file"
-    exit 1
-  fi
 
   local src=$SOURCE_PATH/$1
   local target=$HOME/$1
   local bak=$BACKUP_PATH/$1
+
+  if [ -d $target ]
+  then
+    echo "target shoul be a file, got directory instead"
+    exit 1
+  fi
 
   # Create destination path if not exists
   local aux=$(dirname $target)
@@ -39,8 +40,8 @@ link_file() {
     mkdir -p $aux
   fi
 
-  # Check if it's not a symlink
-  if [ ! -L $target ]
+  # If target is a file and it's not a symlink
+  if [ -f $target ] && [ ! -L $target ]
   then
     # Create path for backup if not exists
     aux=$(dirname $bak)
@@ -60,18 +61,19 @@ link_file() {
 link_dir() {
   if [ $# -ne 1 ]
   then
-    echo "link_dir requires two arguments"
-    exit 1
-  fi
-  if [ ! -d $target ]
-  then
-    echo "target should be directory"
+    echo "link_dir requires one argument"
     exit 1
   fi
 
   local src=$SOURCE_PATH/$1
   local target=$HOME/$1
   local bak=$BACKUP_PATH/$1
+
+  if [ -f $target ]
+  then
+    echo "target shoul be a directory, got file instead"
+    exit 1
+  fi
 
   # Create destination path if not exists
   local aux=$(dirname $target)
@@ -80,8 +82,8 @@ link_dir() {
     mkdir -p $aux
   fi
 
-  # Check if it's not a symlink
-  if [ ! -L $target ]
+  # If target is a directory and it's not a symlink
+  if [ -d $target ] && [ ! -L $target ]
   then
     # Create path for backup if not exists
     if [ ! -d $bak ]
@@ -113,10 +115,17 @@ link() {
 ###################
 link .zshrc
 
+
 #################
 ## Conky Setup ##
 #################
 link .conkyrc
+
+
+###############
+## Git Setup ##
+###############
+link .gitconfig
 
 
 #################
