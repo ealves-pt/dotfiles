@@ -120,3 +120,6 @@ complete -o nospace -C /usr/bin/terraform terraform
 # Enable spicetify-cli
 export SPICETIFY_INSTALL="$HOME/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
+
+# My own aliases
+alias ll='ls -AlF'
