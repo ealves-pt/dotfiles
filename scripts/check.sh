@@ -68,6 +68,8 @@ check_command fzf 'install: https://github.com/junegunn/fzf#installation'
 check_command ag 'install: https://github.com/ggreer/the_silver_searcher'
 check_command nvim 'install: https://github.com/neovim/neovim/wiki/Installing-Neovim'
 nvimOK=$?
+check_command docker 'install: https://docs.docker.com/engine/install/'
+check_command docker_compose 'install: https://docs.docker.com/compose/install/'
 check_command terraform 'install: https://learn.hashicorp.com/tutorials/terraform/install-cli'
 check_command gcloud 'install: https://cloud.google.com/sdk/docs/install'
 check_command kubectl 'install: https://kubernetes.io/docs/tasks/tools'
