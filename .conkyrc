@@ -56,9 +56,9 @@ conky.config = {
   draw_shades   = false,        -- draw shades
   default_color = '#ECEFF4',    -- default color and border color
 
+  -- Text colors
   color0 = '#5E81AC',
   color1 = '#81A1C1',
-
   -- The colors for the gradient
   color6 = '#DDA87D',
   color7 = '#EBCB8B',
@@ -74,10 +74,8 @@ $color0${voffset 2}System ${hr 2}$color
 ${color1}Hostname:$color$alignr$nodename
 ${color1}Kernel:$color$alignr${exec uname} ${exec uname -r}
 ${color1}Distro:$color$alignr$sysname$alignr${execi 6000 lsb_release -a | grep 'Description'| awk {'print $3, $4, $5'} | xargs}
-#Nvidia: $alignr${execp  nvidia-smi --query-supported-clocks=gpu_name --format=csv,noheader}
-#Nvidia Driver: $alignr${execi 60000 nvidia-smi | grep "Driver Version"| awk {'print $3'}}
 ${color1}Uptime:$color$alignr$uptime
-#
+
 ${color0}Processors ${hr 2}$color
 ${color1}Temperature:$color$alignr${execi 4 sensors | grep 'Core ' | awk '{total += $3; count++} END {printf "%.0f", total/count}' | sed 's/+//' | sed 's/\.0//g'} °C
 ${color9}${execigraph 4 "sensors | grep 'Core ' | awk '{total += $3; count++} END {printf "%.0f", total/count}' | sed 's/+//' | sed 's/\.0//g'" 10,300 EBCB8B D08770 -t}$color
@@ -86,34 +84,32 @@ $color9${cpugraph cpu0 10,300 EBCB8B D08770 -t}
 $alignc${cpugraph cpu1 10,55 EBCB8B D08770 -t}  ${cpugraph cpu2 10,55 EBCB8B D08770 -t}  ${cpugraph cpu3 10,55 EBCB8B D08770 -t}  ${cpugraph cpu4 10,55 EBCB8B D08770 -t}
 $alignc${cpugraph cpu5 10,55 EBCB8B D08770 -t}  ${cpugraph cpu6 10,55 EBCB8B D08770 -t}  ${cpugraph cpu7 10,55 EBCB8B D08770 -t}  ${cpugraph cpu8 10,55 EBCB8B D08770 -t}
 $alignc${cpugraph cpu9 10,55 EBCB8B D08770 -t}  ${cpugraph cpu10 10,55 EBCB8B D08770 -t}  ${cpugraph cpu11 10,55 EBCB8B D08770 -t}  ${cpugraph cpu12 10,55 EBCB8B D08770 -t}$color
-#
+
 ${color0}Memory ${hr 2}$color
 ${color1}RAM$color$alignc$mem/$memmax$alignr$memperc%
 $color6${membar}${goto 5}$color9${execbar echo 0}
-# Swap: $alignc$swap/$swapmax$alignr
-# $swapbar
-# Highest:${alignr 24}CPU${alignr}RAM
-# ${voffset -1}${goto 32}${top_mem name 1}${alignr}${top_mem cpu 1}${alignr}${top_mem mem 1}
-# ${voffset -1}${goto 32}${top_mem name 2}${alignr}${top_mem cpu 2}${alignr}${top_mem mem 2}
-# ${voffset -1}${goto 32}${top_mem name 3}${alignr}${top_mem cpu 3}${alignr}${top_mem mem 3}
-# ${voffset -1}${goto 32}${top_mem name 4}${alignr}${top_mem cpu 4}${alignr}${top_mem mem 4}
-# ${voffset -1}${goto 32}${top_mem name 5}${alignr}${top_mem cpu 5}${alignr}${top_mem mem 5}
-#
+
 ${color0}Disks ${hr 2}$color
 $color1/$color$alignc${fs_used /}/${fs_size /}$alignr${fs_used_perc /}%
 $color6${fs_bar}${goto 5}$color9${execbar echo 0}
-# ${offset 30}I/O Read:$alignr${offset -10}${diskio_read /dev/nvme0n1p8}$alignr${diskiograph_read nvme0n1p8 10,100}
-# ${offset 30}I/O Write:$alignr${offset -10}${diskio_write /dev/nvme0n1p8}$alignr${diskiograph_write nvme0n1p8 10,100}
+
+${color0}Top Processes ${hr 2}$color
+${top name 1}${alignr}${top cpu 1}${top mem 1}
+${top name 2}${alignr}${top cpu 2}${top mem 2}
+${top name 3}${alignr}${top cpu 3}${top mem 3}
+#
 ${if_up wlp0s20f3}\
+
 ${color0}Network ${hr 2}$color
 ${color1}Local IP:$color$alignr${addrs wlp0s20f3}
-${color1}Upspeed$color$alignr${upspeed wlp0s20f3}
+${color1}Upspeed$color$alignr${upspeedf wlp0s20f3} KiB
 $color9${upspeedgraph wlp0s20f3 10,300 EBCB8B D08770 -t}$color
-${color1}Downspeed$color$alignr${downspeed wlp0s20f3}
+${color1}Downspeed$color$alignr${downspeedf wlp0s20f3} KiB
 $color9${downspeedgraph wlp0s20f3 10,300 EBCB8B D08770 -t}$color
 ${endif}\
 #
 ${if_match ${exec nvidia-smi | grep 'failed' -c} == 0 }
+
 ${color0}Discrete GPU ${hr 2}$color
 GPU:$alignr${exec if nvidia-smi; then nvidia-smi --query-supported-clocks=gpu_name --format=csv,noheader; fi}
 ${offset 30}GPU Temp $alignr${execi 60 if nvidia-smi; then nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader; fi} °C
