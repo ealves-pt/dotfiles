@@ -2,6 +2,11 @@
 
 " GENERAL
 
+" ===================== nord-vim ====================
+let g:nord_cursor_line_number_background = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_uniform_diff_background = 1
+
 " ===================== vim-airline ====================
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='molokai'
