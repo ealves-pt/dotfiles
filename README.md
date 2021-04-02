@@ -35,3 +35,24 @@
 
 I made **Fira Code** the default font in the entire system using Gnome Tweaks:
 ![Gnome Tweaks Font](./images/fonts_tweak.png)
+
+### Troubleshooting
+
+#### Fingerprint
+
+Following [this](https://www.reddit.com/r/Dell/comments/ixwgm0/xps_15_9500_ubuntu_popos_fingerprint_howto/)
+thread I was abble to setup fingerprint on my XPS 9500. My device is:
+
+```zsh
+$lsusb | grep -i goodix
+Bus 001 Device 002: ID 27c6:533c Shenzhen Goodix Technology Co.,Ltd. FingerPrint
+```
+
+The steps are:
+
+1. `sudo apt install libfprint-2-tod1`
+2. download the goodix from [here](http://dell.archive.canonical.com/updates/pool/public/libf/libfprint-2-tod1-goodix/)
+3. `sudo dpkg -i libfprint-2-tod1-goodix_0.0.6-0ubuntu1~somerville1_amd64.deb`
+4. restart (:warning: really, restart it) and go to users in system settings to
+enable the fingerprints
+5. `sudo pam-auth-update` to set fingerprint as the authentication method
