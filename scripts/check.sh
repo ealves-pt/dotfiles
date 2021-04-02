@@ -69,10 +69,11 @@ check_command ag 'install: https://github.com/ggreer/the_silver_searcher'
 check_command nvim 'install: https://github.com/neovim/neovim/wiki/Installing-Neovim'
 nvimOK=$?
 check_command docker 'install: https://docs.docker.com/engine/install/'
-check_command docker_compose 'install: https://docs.docker.com/compose/install/'
+check_command docker-compose 'install: https://docs.docker.com/compose/install/'
 check_command terraform 'install: https://learn.hashicorp.com/tutorials/terraform/install-cli'
 check_command gcloud 'install: https://cloud.google.com/sdk/docs/install'
 check_command kubectl 'install: https://kubernetes.io/docs/tasks/tools'
+check_command aws-iam-authenticator 'install: https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html'
 check_command conky 'install: https://github.com/brndnmtthws/conky/wiki/Installation'
 check_command spicetify 'install: https://github.com/khanhas/spicetify-cli/wiki/Installation'
 
