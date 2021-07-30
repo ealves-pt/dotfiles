@@ -20,4 +20,6 @@
   insteadOf = https://github.com/
 
 [pager]
-	branch = false
+  branch = false
+  log = false
+  tag = false
