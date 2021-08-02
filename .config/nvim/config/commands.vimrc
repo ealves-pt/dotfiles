@@ -15,11 +15,6 @@ autocmd FileType vue syntax sync fromstart
 autocmd FileType typescript nnoremap <silent> <Leader>gd :TSDef<CR>
 
 " ----------------------------------------------------------------------------
-" Tilt
-" ----------------------------------------------------------------------------
-" autocmd BufNewFile,BufReadPost *.star,Tiltfile* setlocal filetype=startlark
-
-" ----------------------------------------------------------------------------
 " Markdown
 " ----------------------------------------------------------------------------
 " Detect .md as markdown
