@@ -68,10 +68,10 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Less
-Plug 'groenewege/vim-less'
+" Plug 'groenewege/vim-less'
 
 " Stylus
-Plug 'iloginow/vim-stylus'
+" Plug 'iloginow/vim-stylus'
 
 " Docker
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
@@ -88,7 +88,10 @@ Plug 'posva/vim-vue'
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
 
+" Terraform
+Plug 'hashivim/vim-terraform'
+
 " Starlark
-Plug 'cappyzawa/starlark.vim'
+" Plug 'cappyzawa/starlark.vim'
 
 call plug#end()
