@@ -80,6 +80,7 @@ let g:coc_global_extensions = [
   \ 'coc-tslint-plugin',
   \ 'coc-tsserver',
   \ 'coc-markdownlint',
+  \ 'coc-phpls',
   \]
 let g:coc_selectmode_mapping = 0
 hi CocErrorSign   ctermfg=15 ctermbg=236

@@ -85,4 +85,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 " Terraform
 Plug 'hashivim/vim-terraform'
 
+" PHP
+Plug 'StanAngeloff/php.vim'
+Plug 'stephpy/vim-php-cs-fixer'
+
 call plug#end()
