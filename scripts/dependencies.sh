@@ -26,7 +26,8 @@ sudo apt-get install -y \
   gnome-tweaks \
   lsb-core \
   lm-sensors \
-  slack
+  slack \
+  direnv
 
 # Set zsh as default shell
 sudo chsh -s $(which zsh)
