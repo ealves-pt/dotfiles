@@ -66,4 +66,6 @@
       command: ./scripts/slack.sh
     - description: install pritunl
       command: ./scripts/pritunl.sh
+    - description: install 1password
+      command: ./scripts/1password.sh
 
