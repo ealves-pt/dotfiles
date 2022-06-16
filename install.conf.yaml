@@ -65,8 +65,6 @@
       command: ./scripts/dbeaver.sh
     - description: install spotify
       command: ./scripts/spotify.sh
-    - description: install slack
-      command: ./scripts/slack.sh
     - description: install pritunl
       command: ./scripts/pritunl.sh
     - description: install 1password
