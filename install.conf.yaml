@@ -7,6 +7,8 @@
 
 - create:
     - ~/.local/bin
+    - ~/git
+    - ~/work
 
 # install basics
 - shell:
@@ -71,4 +73,6 @@
       command: ./scripts/1password.sh
     - description: install papirus icons
       command: ./scripts/papirus.sh
+    - description: create .gitconfig_local
+      command: if [ ! -f ~/.gitconfig_local ]; then; touch ~/.gitconfig_local; fi;
 
