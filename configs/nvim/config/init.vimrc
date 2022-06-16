@@ -16,9 +16,8 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'arcticicestudio/nord-vim'
 
 " Git
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Misc

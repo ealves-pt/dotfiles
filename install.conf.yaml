@@ -30,15 +30,18 @@
     ~/.config/nvim:
       force: true
       path: configs/nvim
-    ~/.local/bin/docker-compose: # because docker compose will be installed as a docker plugin in the steps below
-      force: true
-      path: bin/docker-compose.sh
     ~/.gitconfig:
       force: true
       path: configs/.gitconfig
     ~/.conkyrc:
       force: true
       path: configs/.conkyrc
+    ~/.local/bin/docker-compose: # because docker compose will be installed as a docker plugin in the steps below
+      force: true
+      path: bin/docker-compose.sh
+    ~/.local/bin/ta: # because docker compose will be installed as a docker plugin in the steps below
+      force: true
+      path: bin/ta.sh
 
 # install other dependencies
 - shell:
@@ -68,4 +71,6 @@
       command: ./scripts/pritunl.sh
     - description: install 1password
       command: ./scripts/1password.sh
+    - description: install papirus icons
+      command: ./scripts/papirus.sh
 

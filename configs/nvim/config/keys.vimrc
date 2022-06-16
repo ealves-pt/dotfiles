@@ -71,9 +71,6 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " fzf
 " ----------------------------------------------------------------------------
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<CR>"
-nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
-nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
-xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
 
 " ----------------------------------------------------------------------------
 " coc.nvim
@@ -95,11 +92,8 @@ omap af <Plug>(coc-funcobj-a)
 
 " ----------------------------------------------------------------------------
 " vim-fugitive
-" ----------------------------------------------------------------------------
-nmap <Leader>g :Git<CR>gg<c-n>
-nmap <Leader>d :Gdiffsplit<CR>
-nnoremap <silent> <Leader>ghp  :GitGutterPreviewHunk<CR>
-nnoremap <silent> <Leader>ghk :GitGutterPrevHunk<CR>
-nnoremap <silent> <Leader>ghj :GitGutterNextHunk<CR>
-nnoremap <silent> <Leader>ghu :GitGutterUndoHunk<CR>
+" ---------------------------------------------------------------------------
+nmap <Leader>gis :Git<CR>
+nmap <Leader>gid :Gdiffsplit<CR>
+nmap <Leader>gib <cmd>Git blame<CR>
 

@@ -27,7 +27,10 @@ sudo apt-get install -y \
   lsb-core \
   lm-sensors \
   slack \
-  direnv
+  direnv \
+  ripgrep \
+  fzy \
+  bat
 
 # Set zsh as default shell
 sudo chsh -s $(which zsh)
