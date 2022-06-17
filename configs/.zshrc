@@ -57,5 +57,3 @@ alias ll='ls -AlF'
 alias tk="for s in \$(tmux list-sessions | awk '{print \$1}' | rg ':' -r '' | fzy); do tmux kill-session -t \$s; done;"
 alias tl="tmux ls"
 
-# attach terminal to a tmux session
-ta

@@ -8,12 +8,12 @@
 # References:
 #   https://github.com/alacritty/alacritty
 
-# shell:
-#   program: /usr/bin/zsh
-#   args:
-#     - -l
-#     - -c
-#     - "tmux"
+shell:
+  program: /usr/bin/zsh
+  args:
+    - -l
+    - -c
+    - "ta"
 
 font:
   normal:
