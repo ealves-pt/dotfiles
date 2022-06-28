@@ -1,0 +1,7 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot.git
+	ignore = dirty
+[submodule "submodules/Papirus-Nord"]
+	path = submodules/Papirus-Nord
+	url = https://github.com/Adapta-Projects/Papirus-Nord.git

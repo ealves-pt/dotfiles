@@ -1,0 +1,78 @@
+- defaults:
+    link:
+      relink: true
+    shell:
+      quiet: true
+      stderr: true
+
+- create:
+    - ~/.local/bin
+    - ~/git
+    - ~/work
+
+# install basics
+- shell:
+    - description: prepare dependencies
+      command: ./scripts/dependencies.sh
+    - description: install oh-my-zsh
+      command: ./scripts/oh-my-zsh.sh
+
+# link files
+- link:
+    ~/.tmux.conf:
+      force: true
+      path: configs/.tmux.conf
+    ~/.zshrc:
+      force: true
+      path: configs/.zshrc
+    ~/.config/alacritty/alacritty.yml:
+      create: true
+      force: true
+      path: configs/alacritty.yml
+    ~/.config/nvim:
+      force: true
+      path: configs/nvim
+    ~/.gitconfig:
+      force: true
+      path: configs/.gitconfig
+    ~/.conkyrc:
+      force: true
+      path: configs/.conkyrc
+    ~/.local/bin/docker-compose: # because docker compose will be installed as a docker plugin in the steps below
+      force: true
+      path: bin/docker-compose.sh
+    ~/.local/bin/ta: # because docker compose will be installed as a docker plugin in the steps below
+      force: true
+      path: bin/ta.sh
+
+# install other dependencies
+- shell:
+    - description: install docker (restart required)
+      command: ./scripts/docker.sh
+    - description: install Go with multi-environment support
+      command: ./scripts/go.sh
+      stdout: true
+    - description: install Node with multi-environment support
+      command: ./scripts/node.sh
+      stdout: true
+    - description: install gcloud and kubectl
+      command: ./scripts/gcloud.sh
+    - description: install alacritty
+      command: ./scripts/alacritty.sh
+    - description: install nvim
+      command: ./scripts/nvim.sh
+    - description: install code
+      command: ./scripts/code.sh
+    - description: install dbeaver
+      command: ./scripts/dbeaver.sh
+    - description: install spotify
+      command: ./scripts/spotify.sh
+    - description: install pritunl
+      command: ./scripts/pritunl.sh
+    - description: install 1password
+      command: ./scripts/1password.sh
+    - description: install papirus icons
+      command: ./scripts/papirus.sh
+    - description: create .gitconfig_local
+      command: if [ ! -f ~/.gitconfig_local ]; then; touch ~/.gitconfig_local; fi;
+
