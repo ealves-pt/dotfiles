@@ -16,6 +16,7 @@ then
   curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
 
   # create themes
+  mkdir -p ~/.config/spicetify
   cd ~/.config/spicetify
   git clone https://github.com/spicetify/spicetify-themes.git Themes
 

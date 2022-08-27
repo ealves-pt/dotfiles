@@ -32,5 +32,3 @@ sudo apt-get install -y \
   fzy \
   bat
 
-# Set zsh as default shell
-sudo chsh -s $(which zsh)

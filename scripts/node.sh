@@ -7,5 +7,6 @@ if [ ! -d ~/.nvm ]; then
 fi
 
 if ! command -v node &> /dev/null; then
+  source ~/.zshrc
   nvm install --lts
 fi

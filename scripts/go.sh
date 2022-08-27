@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-GOVERSION=go1.17.11
+GOVERSION=go1.19
 
 if [ ! -d ~/.gvm ]; then
   # https://github.com/moovweb/gvm#installing

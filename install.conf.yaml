@@ -12,10 +12,14 @@
 
 # install basics
 - shell:
+    - description: update submodules
+      command: git submodule update --init
     - description: prepare dependencies
       command: ./scripts/dependencies.sh
     - description: install oh-my-zsh
       command: ./scripts/oh-my-zsh.sh
+    - description: create default work alias
+      command: if [ ! -f ~/work/.alias_default ]; then touch ~/work/.alias_default; fi
 
 # link files
 - link:
@@ -74,5 +78,4 @@
     - description: install papirus icons
       command: ./scripts/papirus.sh
     - description: create .gitconfig_local
-      command: if [ ! -f ~/.gitconfig_local ]; then; touch ~/.gitconfig_local; fi;
-
+      command: if [ ! -f ~/.gitconfig_local ]; then touch ~/.gitconfig_local; fi

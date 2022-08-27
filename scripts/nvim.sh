@@ -18,4 +18,7 @@ then
 
   # install nvim plugins
   nvim +PlugInstall +qall
+
+  # symlink
+  ln -s ~/.local/bin/nvim ~/.local/bin/vim
 fi

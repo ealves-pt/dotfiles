@@ -1,6 +1,11 @@
 # dotfiles
 
-> No longer just dotfiles...
+## Install
+
+1. clone the repository to $HOME
+2. enter the folder and run `./install`
+3. at the end of the script run `chsh -s $(which zsh)`
+4. restart the laptop
 
 ![neofetch](./images/neofetch.png)
 
