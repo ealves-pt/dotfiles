@@ -1,94 +1,56 @@
-" init.vimrc - Collection of all plugins
+" ============= Vim-Plug ============== "{{{
+
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 
-" GENERAL IMPROVEMENTS
+"}}}
 
-" Helpers
-Plug 'christianrondeau/vim-base64'
+" ================= Looks and GUI ================== "{{{
 
-" File context type
-Plug 'Shougo/context_filetype.vim'
+Plug 'arcticicestudio/nord-vim'                         " Theme
+Plug 'vim-airline/vim-airline'                          " Status line
+Plug 'vim-airline/vim-airline-themes'                   " Status line themes
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }  " Sidebar Navigation
+Plug 'Xuyuanp/nerdtree-git-plugin'                      " Git status flags in NERDTree
+Plug 'ryanoasis/vim-devicons'                           " pretty icons everywhere
+Plug 'jlanzarotta/bufexplorer'                          " enhanced buffer navigation
+"}}}
 
-" Autocompletion
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" ================= Functionalities ================== "{{{
 
-" Theme
-Plug 'arcticicestudio/nord-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}         " LSP and more
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fzf itself
+Plug 'junegunn/fzf.vim'                                 " fuzzy search integration
+Plug 'Shougo/context_filetype.vim'                      " better filetype context
+Plug 'tyru/caw.vim'                                     " better commenting
+Plug 'tpope/vim-fugitive'                               " git support
+Plug 'tpope/vim-surround'                               " better surroundings
+Plug 'jiangmiao/auto-pairs'                             " auto-pair functionality
+Plug 'christianrondeau/vim-base64'                      " base64 shorcuts
+Plug 'honza/vim-snippets'                               " actual snippets
+Plug 'gpanders/editorconfig.nvim'                       " .editorconfig support
+Plug 'iamcco/markdown-preview.nvim', |                  " Markdown
+     / { 'do': { -> mkdp#util#install() }, |
+     / 'for': ['markdown', 'vim-plug']}
+"}}}
 
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" ================== Language Specifics ===================== "{{{
 
-" Misc
-" Emojis
-" Cheatsheet: https://www.webpagefx.com/tools/emoji-cheat-sheet/
-Plug 'junegunn/vim-emoji'
-
-" Auto pair
-Plug 'jiangmiao/auto-pairs'
-
-" Comments
-Plug 'tyru/caw.vim'
-
-" Snippets
-Plug 'SirVer/ultisnips'
-
-" Surrounding helpers
-Plug 'tpope/vim-surround'
-
-" Status tabline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Buffer explorer
-Plug 'jlanzarotta/bufexplorer'
-
-" Fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Navigation
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-" LANGUAGE/USAGE SPECIFIC
-" Comment the ones you don't require
-
-" editorconfig
-Plug 'gpanders/editorconfig.nvim'
-
-" Markdown
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-
-" Asciidoc
-Plug 'habamax/vim-asciidoctor'
-
-" Jenkinsfile
-Plug 'martinda/Jenkinsfile-vim-syntax'
-
-" JSON
-Plug 'elzr/vim-json', { 'for': 'json' }
-
-" Docker
-Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-" JavaScript
-Plug 'pangloss/vim-javascript'
-
-" Vue.js
-Plug 'posva/vim-vue'
-
-" Typescript
-Plug 'HerringtonDarkholme/yats.vim'
-
-" Terraform
-Plug 'hashivim/vim-terraform'
-
-" PHP
-Plug 'StanAngeloff/php.vim'
-Plug 'stephpy/vim-php-cs-fixer'
+" Plug 'martinda/Jenkinsfile-vim-syntax'                  " Jenkinsfile
+" Plug 'elzr/vim-json', { 'for': 'json' }                 " json
+" Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' } " Docker
+" Plug 'pangloss/vim-javascript'                          " JavaScript
+" Plug 'posva/vim-vue'                                    " Vue.js
+" Plug 'HerringtonDarkholme/yats.vim'                     " Typescript
+" Plug 'hashivim/vim-terraform'                           " Terraform
+" Plug 'StanAngeloff/php.vim'                             " PHP
+" Plug 'stephpy/vim-php-cs-fixer'                         " PHP Coding Standards Fixer
 
 call plug#end()
+"}}}
