@@ -1,62 +1,87 @@
+// vim: filetype=jsonc
 {
-  "coc.preferences.formatOnSaveFiletypes": [],
+  // codelens settings
+  "codeLens.enable": true,
+  "codeLens.position": "eol",
 
-  "diagnostic.enableHighlightLineNumber": false,
+  // normal settings
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.snippetStatusText": "Ⓢ ",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "php",
+    "javascript",
+    "typescript",
+    "html",
+    "css",
+    "json",
+    "jsonc",
+    "markdown"
+  ],
+
+  // diagnostic settings
+  "diagnostic.displayByAle": false,
+  "diagnostic.refreshOnInsertMode": true,
   "diagnostic.errorSign": "ⓧ",
   "diagnostic.hintSign": "ⓘ",
   "diagnostic.infoSign": "ⓘ",
   "diagnostic.warningSign": "ⓦ",
-  "diagnostic.maxWindowHeight": 30,
-  "diagnostic.maxWindowWidth": 200,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualTextPrefix": " ❯❯❯ ",
+  "diagnostic.virtualText": true,
+  "diagnostic.enableMessage": "never",
 
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod", ".git/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true,
-        "completeUnimported": true
-      }
-    }
-  },
-
-  "signature.preferShownAbove":false,
-  "snippets.extends": {
-    "typescript": ["javascript"]
-  },
-  "snippets.ultisnips.directories": ["gosnippets/UltiSnips"],
-
+  // suggest settings
+  "suggest.noselect": false,
+  "suggest.detailField": "abbr",
+  "suggest.snippetIndicator": "",
+  "suggest.removeDuplicateItems": true,
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.timeout": 2000,
+  "suggest.minTriggerInputLength": 2,
   "suggest.completionItemKindLabels": {
-    "class": "Class",
-    "color": "Color",
+    "function": "Function",
+    "method": "Method",
+    "variable": "Variable",
     "constant": "Constant",
+    "struct": "Struct",
+    "class": "Class",
+    "interface": "Interface",
+    "text": "Text",
     "enum": "Emun",
     "enumMember": "EnumMember",
-    "event": "Event",
-    "field": "Field",
-    "file": "File",
-    "folder": "Folder",
-    "function": "Function",
-    "interface": "Interface",
-    "keyword": "Keyword",
-    "method": "Method",
     "module": "Module",
-    "operator": "Operator",
+    "color": "Color",
     "property": "Property",
-    "reference": "Reference",
-    "snippet": "Snippet",
-    "struct": "Struct",
-    "text": "Text",
-    "typeParameter": "TypeParam",
+    "field": "Field",
     "unit": "Unit",
+    "file": "File",
     "value": "Value",
-    "variable": "Variable",
+    "event": "Event",
+    "folder": "Folder",
+    "keyword": "Keyword",
+    "snippet": "Snippet",
+    "operator": "Operator",
+    "reference": "Reference",
+    "typeParameter": "TypeParam",
     "default": "Default"
   },
-  "suggest.defaultSortMethod": "alphabetical",
 
-  "suggest.maxPreviewWidth": 200,
-  "suggest.localityBonus": false,
-  "suggest.minTriggerInputLength": 2
+  // LSP settings
+  "languageserver": {},
+
+  // Go settings
+  "go.goplsPath": "gopls",
+  "go.goplsOptions": {
+    "linksInHover": false,
+    "usePlaceholders": true,
+    "completeUnimported": true,
+    "analyses": {
+      "nilness": true,
+      "shadow": true,
+      "unusedparams": true,
+      "unusedvariable": true
+    }
+  }
 }
