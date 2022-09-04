@@ -35,15 +35,15 @@ Plug 'jiangmiao/auto-pairs'                             " auto-pair functionalit
 Plug 'christianrondeau/vim-base64'                      " base64 shorcuts
 Plug 'honza/vim-snippets'                               " actual snippets
 Plug 'gpanders/editorconfig.nvim'                       " .editorconfig support
-Plug 'iamcco/markdown-preview.nvim', |                  " Markdown
-     / { 'do': { -> mkdp#util#install() }, |
-     / 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim',                    " Markdown
+     \ { 'do': { -> mkdp#util#install() },
+     \ 'for': ['markdown', 'vim-plug']}
 "}}}
 
 " ================== Language Specifics ===================== "{{{
 
-" Plug 'martinda/Jenkinsfile-vim-syntax'                  " Jenkinsfile
-" Plug 'elzr/vim-json', { 'for': 'json' }                 " json
+Plug 'martinda/Jenkinsfile-vim-syntax'                  " Jenkinsfile
+" Plug 'elzr/vim-json', { 'for': 'json' }                 " Json
 " Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' } " Docker
 " Plug 'pangloss/vim-javascript'                          " JavaScript
 " Plug 'posva/vim-vue'                                    " Vue.js
