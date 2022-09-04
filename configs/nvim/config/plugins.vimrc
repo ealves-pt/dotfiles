@@ -72,16 +72,24 @@ let g:vim_json_syntax_conceal = 0
 " ====================== coc.nvim ======================
 " Settings
 let g:coc_global_extensions = [
-  \ 'coc-sh',
-  \ 'coc-json',
-  \ 'coc-html',
-  \ 'coc-python',
-  \ 'coc-snippets',
-  \ 'coc-tslint-plugin',
-  \ 'coc-tsserver',
-  \ 'coc-markdownlint',
-  \ 'coc-phpls',
-  \]
+      \ 'coc-docker',
+      \ 'coc-git',
+      \ 'coc-go',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-json',
+      \ 'coc-lists',
+      \ 'coc-markdownlint',
+      \ 'coc-pairs',
+      \ 'coc-sh',
+      \ 'coc-snippets',
+      \ 'coc-sql',
+      \ 'coc-toml',
+      \ 'coc-tsserver',
+      \ 'coc-xml',
+      \ 'coc-yaml',
+      \ 'coc-yank'
+      \ ]
 let g:coc_selectmode_mapping = 0
 hi CocErrorSign   ctermfg=15 ctermbg=236
 hi CocHintSign    ctermfg=15 ctermbg=236
