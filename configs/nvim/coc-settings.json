@@ -1,25 +1,24 @@
-// vim: filetype=jsonc
 {
   // codelens settings
   "codeLens.enable": true,
   "codeLens.position": "eol",
-
   // normal settings
   "coc.preferences.extensionUpdateCheck": "daily",
-  "coc.preferences.colorSupport": true,
   "coc.preferences.snippetStatusText": "Ⓢ ",
   "coc.preferences.formatOnSaveFiletypes": [
-    "go",
-    "php",
-    "javascript",
-    "typescript",
-    "html",
     "css",
+    "dockerfile",
+    "go",
+    "html",
+    "javascript",
     "json",
     "jsonc",
-    "markdown"
+    "markdown",
+    "php",
+    "toml",
+    "typescript",
+    "yaml"
   ],
-
   // diagnostic settings
   "diagnostic.displayByAle": false,
   "diagnostic.refreshOnInsertMode": true,
@@ -31,7 +30,6 @@
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
   "diagnostic.enableMessage": "never",
-
   // suggest settings
   "suggest.noselect": false,
   "suggest.detailField": "abbr",
@@ -67,10 +65,16 @@
     "typeParameter": "TypeParam",
     "default": "Default"
   },
-
   // LSP settings
   "languageserver": {},
-
+  // List settings
+  "list.source.grep.command": "rg",
+  // Git settings
+  "git.addedSign.hlGroup": "GitGutterAdd",
+  "git.changedSign.hlGroup": "GitGutterChange",
+  "git.removedSign.hlGroup": "GitGutterDelete",
+  "git.topRemovedSign.hlGroup": "GitGutterDelete",
+  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
   // Go settings
   "go.goplsPath": "gopls",
   "go.goplsOptions": {
@@ -85,3 +89,4 @@
     }
   }
 }
+// vim: filetype=jsonc

@@ -14,6 +14,7 @@ sudo apt-get install -y \
   bison \
   fzf \
   silversearcher-ag \
+  ripgrep \
   python3 \
   python3-pip \
   apt-transport-https \
@@ -28,7 +29,6 @@ sudo apt-get install -y \
   lm-sensors \
   slack \
   direnv \
-  ripgrep \
   fzy \
   bat
 
