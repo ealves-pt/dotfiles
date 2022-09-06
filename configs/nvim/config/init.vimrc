@@ -72,12 +72,6 @@ set foldlevel=0                                         " open all folds by defa
 set inccommand=nosplit                                  " visual feedback while substituting
 set showtabline=0                                       " always show tabline
 set grepprg=rg\ --vimgrep                               " use rg as default grepper
-" set wildmenu                                            " set command-line completion to enhanced mode
-" set virtualedit=block                                   " set virtual edit in Visual block mode
-" set foldlevelstart=99                                   " never fold new buffers
-" set completeopt=menuone,noinsert,noselect               " configure completion
-" set diffopt=filler,vertical                             " set diff mode to show filler lines and split vertically
-" set wildmode=full                                       " complete the next full match
 
 " temp files
 set backupdir=/tmp//,.
