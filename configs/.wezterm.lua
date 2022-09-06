@@ -10,10 +10,12 @@ return {
   leader = { key = 'Space', mods = 'CTRL' },
   keys = {
     -- reload configuration
-    { key = 'r', mods = 'LEADER', action = act.CopyTo 'Clipboard' },
-    -- window
+    { key = 'r', mods = 'LEADER', action = act.ReloadConfiguration },
+    -- window new/fullscreen/find_mode/copy_mode
     { key = 'n', mods = 'CTRL', action = act.SpawnWindow },
     { key = 'Enter', mods = 'CTRL', action = act.ToggleFullScreen },
+    { key = 'mapped:F', mods = 'CTRL', action = act.Search { CaseSensitiveString = "" } },
+    { key = 'mapped:X', mods = 'CTRL', action = act.ActivateCopyMode },
     -- copy/paste
     { key = 'mapped:C', mods = 'CTRL', action = act.CopyTo 'Clipboard' },
     { key = 'mapped:V', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },    
