@@ -13,7 +13,6 @@ sudo apt-get install -y \
   tmux \
   bison \
   fzf \
-  silversearcher-ag \
   ripgrep \
   python3 \
   python3-pip \
