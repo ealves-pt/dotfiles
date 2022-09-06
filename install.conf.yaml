@@ -29,6 +29,9 @@
     ~/.zshrc:
       force: true
       path: configs/.zshrc
+    ~/.wezterm.lua:
+      force: true
+      path: configs/.wezterm.lua
     ~/.config/alacritty/alacritty.yml:
       create: true
       force: true
