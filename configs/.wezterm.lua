@@ -9,19 +9,26 @@ return {
   disable_default_key_bindings = true,
   leader = { key = 'Space', mods = 'CTRL' },
   keys = {
+    -- new window
+    { key = 'mapped:N', mods = 'CTRL', action = act.SpawnWindow },
+    -- copy/paste
+    { key = 'mapped:C', mods = 'CTRL', action = act.CopyTo 'Clipboard' },
+    { key = 'mapped:V', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },    
+    -- zoom in/out
+    { key = '+', mods = 'CTRL', action = act.IncreaseFontSize },
+    { key = '-', mods = 'CTRL', action = act.DecreaseFontSize },
     -- pane split
-    { mod = 'ALT', key = 'mapped:S', action = act.SplitPane { direction = 'Down' } },
-    { mod = 'ALT', key = 'mapped:V', action = act.SplitPane { direction = 'Right' } },
-    
+    { key = 'mapped:S', mod = 'ALT', action = act.SplitPane { direction = 'Down' } },
+    { key = 'mapped:V', mod = 'ALT', action = act.SplitPane { direction = 'Right' } },
     -- pane navigation
-    { mod = 'ALT', key = 'mapped:H', action = act.ActivatePaneDirection 'Left' },
-    { mod = 'ALT', key = 'mapped:L', action = act.ActivatePaneDirection 'Right' },
-    { mod = 'ALT', key = 'mapped:K', action = act.ActivatePaneDirection 'Up' },
-    { mod = 'ALT', key = 'mapped:J', action = act.ActivatePaneDirection 'Down' },
+    { key = 'mapped:H', mod = 'ALT', action = act.ActivatePaneDirection 'Left' },
+    { key = 'mapped:L', mod = 'ALT', action = act.ActivatePaneDirection 'Right' },
+    { key = 'mapped:K', mod = 'ALT', action = act.ActivatePaneDirection 'Up' },
+    { key = 'mapped:J', mod = 'ALT', action = act.ActivatePaneDirection 'Down' },
     -- pane resize
-    { mod = 'ALT|SHIFT', key = 'LeftArrow', action = act.AdjustPaneSize { 'Left', 1 } },
-    { mod = 'ALT|SHIFT', key = 'RightArrow', action = act.AdjustPaneSize { 'Right', 1 } },
-    { mod = 'ALT|SHIFT', key = 'UpArrow', action = act.AdjustPaneSize { 'Up', 1 } },
-    { mod = 'ALT|SHIFT', key = 'DownArrow', action = act.AdjustPaneSize { 'Down', 1 } },
+    { key = 'LeftArrow', mod = 'ALT|SHIFT', action = act.AdjustPaneSize { 'Left', 1 } },
+    { key = 'RightArrow', mod = 'ALT|SHIFT', action = act.AdjustPaneSize { 'Right', 1 } },
+    { key = 'UpArrow', mod = 'ALT|SHIFT', action = act.AdjustPaneSize { 'Up', 1 } },
+    { key = 'DownArrow', mod = 'ALT|SHIFT', action = act.AdjustPaneSize { 'Down', 1 } },
   },
 }
