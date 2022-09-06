@@ -231,16 +231,25 @@ nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 noremap <silent><esc> <esc>:noh<CR><esc>
 
 "" splits
-nnoremap <M-s> <c-w>s
-nnoremap <M-v> <c-w>v
+nnoremap <M-s> <C-w>s
+nnoremap <M-v> <C-w>v
 " circular windoww navigation
-nnoremap <tab>   <c-w>w
-nnoremap <S-tab> <c-w>W
-" resize
-nnoremap <C-Up> <C-w>+
-nnoremap <C-Down> <C-w>-
-nnoremap <C-Left> <C-w><
-nnoremap <C-Right> <C-w>>
+nnoremap <tab>   <C-w>w
+nnoremap <S-tab> <C-w>W
+" switch between splits using meta + {h,j,k,l}
+inoremap <M-h> <C-\><C-N><C-w>h
+inoremap <M-j> <C-\><C-N><C-w>j
+inoremap <M-k> <C-\><C-N><C-w>k
+inoremap <M-l> <C-\><C-N><C-w>l
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l
+" resize splits
+nnoremap <M-Up> <C-w>+
+nnoremap <M-Down> <C-w>-
+nnoremap <M-Left> <C-w><
+nnoremap <M-Right> <C-w>>
 
 "" escaping
 inoremap jk <Esc>
@@ -269,18 +278,17 @@ au FileType markdown nmap <leader>m :MarkdownPreview<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 "" fzf
-nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader><leader> :Files<CR>
 nmap <leader>t :BTags<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>c :Commands<CR>
-nmap <leader>gs :GFiles?<CR>
-nmap <leader>/ :Rg<CR>
+nmap <C-S>f :Rg<CR>
 
-"" git
-" nmap <leader>gs :Commits<CR>
-" nmap <leader>gc :Commits<CR>
+"" fugitive
+nmap <leader>gs :Git<CR>
+nmap <leader>gl :Commits<CR>
 nmap <leader>gd :Gdiffsplit<CR>
-nmap <leader>sh :History/<CR>
+nmap <leader>gb :Git blame<CR>
 
 "" coc.nvim
 nnoremap <silent> K :call ShowDocumentation()<CR>       " show documentation
