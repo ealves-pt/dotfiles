@@ -9,14 +9,20 @@ return {
   disable_default_key_bindings = true,
   leader = { key = 'Space', mods = 'CTRL' },
   keys = {
-    -- new window
-    { key = 'mapped:N', mods = 'CTRL', action = act.SpawnWindow },
+    -- reload configuration
+    { key = 'r', mods = 'LEADER', action = act.CopyTo 'Clipboard' },
+    -- window
+    { key = 'n', mods = 'CTRL', action = act.SpawnWindow },
+    { key = 'Enter', mods = 'CTRL', action = act.ToggleFullScreen },
     -- copy/paste
     { key = 'mapped:C', mods = 'CTRL', action = act.CopyTo 'Clipboard' },
     { key = 'mapped:V', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },    
-    -- zoom in/out
-    { key = '+', mods = 'CTRL', action = act.IncreaseFontSize },
-    { key = '-', mods = 'CTRL', action = act.DecreaseFontSize },
+    -- font size inc/dec/reset
+    { key = '+', mods = 'CTRL|SHIFT', action = act.IncreaseFontSize },
+    { key = '-', mods = 'CTRL|SHIFT', action = act.DecreaseFontSize },
+    { key = '0', mods = 'CTRL|SHIFT', action = act.ResetFontSize },
+    -- pane zoom toggle
+    { key = 'Enter', mod = 'ALT|SHIFT', action = act.TogglePaneZoomState },
     -- pane split
     { key = 'mapped:S', mod = 'ALT', action = act.SplitPane { direction = 'Down' } },
     { key = 'mapped:V', mod = 'ALT', action = act.SplitPane { direction = 'Right' } },
