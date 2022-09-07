@@ -71,9 +71,6 @@ set backupdir=/tmp//,.
 set directory=/tmp//,.
 set undodir=/tmp//,.
 
-" required by coc
-set shortmess+=c
-
 " theme
 colorscheme nord
 "}}}
@@ -88,40 +85,8 @@ let g:loaded_perl_provider = 0
 let g:loaded_ruby_provider = 0
 
 "" nord-vim
-let g:nord_cursor_line_number_background = 1
-let g:nord_uniform_status_lines = 1
+" let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_diff_background = 1
-
-"" nerdtree
-let g:NERDTreeShowHidden = 1
-
-"" airline
-let g:airline#extensions#hunks#coc_git = 1
-
-"" coc.nvim
-" list of extensions
-let g:coc_global_extensions = [
-      \ 'coc-css',
-      \ 'coc-docker',
-      \ 'coc-git',
-      \ 'coc-go',
-      \ 'coc-html',
-      \ 'coc-json',
-      \ 'coc-lists',
-      \ 'coc-lua',
-      \ 'coc-markdownlint',
-      \ 'coc-phpls',
-      \ 'coc-sh',
-      \ 'coc-snippets',
-      \ 'coc-syntax',
-      \ 'coc-sql',
-      \ 'coc-toml',
-      \ 'coc-tsserver',
-      \ 'coc-vetur',
-      \ 'coc-xml',
-      \ 'coc-yaml',
-      \ 'coc-yank'
-      \ ]
 
 "" fzf
 let g:fzf_action = {
