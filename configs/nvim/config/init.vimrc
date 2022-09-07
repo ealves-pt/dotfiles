@@ -45,54 +45,34 @@ call plug#end()
 
 set mouse=a                                             " enable mouse scrolling in all modes
 set clipboard+=unnamedplus                              " use system clipboard by default
-
 set tabstop=2 softtabstop=2 shiftwidth=2                " set all tabs to 2 width spaces
 set expandtab smarttab                                  " use appropriate number of spaces to insert a tab
-
-set ignorecase smartcase.                               " highlight text while searching
-set list listchars=trail:»,tab:»-                       " use tab to navigate in list mode
+set ignorecase smartcase                                " search pattern improvements
+set smartindent                                         " do smart autoindent when starting a new line
 set nowrap                                              " disable line wrap
+set laststatus=3                                        " show only one linestatus
 set number                                              " enable numbers on the left
 set relativenumber                                      " show line numbers relative to cursor
-set title                                               " tab title as file name
+set cursorline                                          " highlight current line
+set title                                               " set window title
+set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70      " set window title string
 set noshowmode                                          " dont show current mode below statusline
 set noshowcmd                                           " get rid of display of last command
 set splitright                                          " open vertical split to the right
 set splitbelow                                          " open horizontal split to the bottom
-set emoji                                               " enable emojis
 set scrolloff=5                                         " always keep some lines visible on screen
-set smartindent                                         " do smart autoindent when starting a new line
 set signcolumn=auto:9                                   " resize to accomodate up to 9 signs
 set nostartofline                                       " keep the cursor on the same column
-set foldlevel=0                                         " open all folds by default
-set inccommand=nosplit                                  " visual feedback while substituting
-set showtabline=0                                       " always show tabline
+set showtabline=2                                       " always show tabline
 set grepprg=rg\ --vimgrep                               " use rg as default grepper
-set laststatus=3                                        " show only one linestatus
 
 " temp files
-" set backupdir=/tmp//,.
-" set directory=/tmp//,.
-" if v:version >= 703
-"   set undodir=/tmp//,.
-" endif
-
-" performance tweaks
-set nocursorline
-set nocursorcolumn
-set lazyredraw
-set redrawtime=10000
-set synmaxcol=180
-" set re=1
+set backupdir=/tmp//,.
+set directory=/tmp//,.
+set undodir=/tmp//,.
 
 " required by coc
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=1
-set updatetime=300
 set shortmess+=c
-set signcolumn=yes
 
 " theme
 colorscheme nord
