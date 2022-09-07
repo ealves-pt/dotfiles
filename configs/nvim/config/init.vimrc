@@ -78,7 +78,6 @@ colorscheme nord
 " ======================== Plugin Configurations ======================== "{{{
 
 "" built in plugins
-let loaded_netrwPlugin = 1
 let g:omni_sql_no_default_maps = 1
 let g:loaded_python_provider = 0
 let g:loaded_perl_provider = 0
