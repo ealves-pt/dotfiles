@@ -53,7 +53,4 @@ done
 #################
 # My own aliases
 alias ll='ls -AlF'
-# tmux alias
-alias tk="for s in \$(tmux list-sessions | awk '{print \$1}' | rg ':' -r '' | fzy); do tmux kill-session -t \$s; done;"
-alias tl="tmux ls"
 

@@ -16,7 +16,6 @@
   * [Spotify - Sleek Nord Theme](https://github.com/spicetify/spicetify-themes)
     * Needs [spicetify-cli](https://github.com/khanhas/spicetify-cli)
   * [Alacritty Theme](https://github.com/arcticicestudio/nord-alacritty)
-  * [Tmux](https://github.com/arcticicestudio/nord-tmux)
   * [Vim](https://github.com/arcticicestudio/nord-vim)
   * [VS Code](https://github.com/arcticicestudio/nord-visual-studio-code)
 * Font

@@ -23,9 +23,6 @@
 
 # link files
 - link:
-    ~/.tmux.conf:
-      force: true
-      path: configs/.tmux.conf
     ~/.zshrc:
       force: true
       path: configs/.zshrc
@@ -38,7 +35,7 @@
       path: configs/alacritty.yml
     ~/.config/nvim:
       force: true
-      path: configs/nvim
+      path: submodules/init.nvim
     ~/.gitconfig:
       force: true
       path: configs/.gitconfig
@@ -48,9 +45,6 @@
     ~/.local/bin/docker-compose: # because docker compose will be installed as a docker plugin in the steps below
       force: true
       path: bin/docker-compose.sh
-    ~/.local/bin/ta: # because docker compose will be installed as a docker plugin in the steps below
-      force: true
-      path: bin/ta.sh
 
 # install other dependencies
 - shell:

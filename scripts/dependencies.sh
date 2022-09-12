@@ -10,7 +10,6 @@ sudo apt-get update
 # Install dependencies
 sudo apt-get install -y \
   zsh \
-  tmux \
   bison \
   fzf \
   ripgrep \

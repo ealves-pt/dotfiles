@@ -8,13 +8,6 @@
 # References:
 #   https://github.com/alacritty/alacritty
 
-shell:
-  program: /usr/bin/zsh
-  args:
-    - -l
-    - -c
-    - "ta"
-
 font:
   normal:
     family: FiraCode Nerd Font
