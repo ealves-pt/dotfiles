@@ -10,7 +10,7 @@
     - ~/git
     - ~/work
 
-# install basics
+# # install basics
 - shell:
     - description: update submodules
       command: git submodule update --init
@@ -48,7 +48,6 @@
     ~/.local/bin/folder-picker: # because docker compose will be installed as a docker plugin in the steps below
       force: true
       path: bin/folder-picker.sh
-    ~/.local/bin/ta: # because docker compose will be installed as a docker plugin in the steps below
 
 # install other dependencies
 - shell:
