@@ -22,3 +22,12 @@ then
   # symlink
   ln -s ~/.local/bin/nvim ~/.local/bin/vim
 fi
+
+if ! command -v luarocks &> /dev/null
+then
+  curl -L https://luarocks.org/releases/luarocks-3.9.1.tar.gz -o /tmp/luarocks.tar.gz && \
+  tar -zxpf /tmp/luarocks.tar.gz -C /tmp && \
+  cd /tmp/luarocks-3.9.1 && \
+  ./configure && make && sudo make install && \
+  sudo luarocks install luasocket
+fi
