@@ -5,3 +5,6 @@
 [submodule "submodules/Papirus-Nord"]
 	path = submodules/Papirus-Nord
 	url = https://github.com/Adapta-Projects/Papirus-Nord.git
+[submodule "submodules/init.nvim"]
+	path = submodules/init.nvim
+	url = git@github.com:ealves-pt/init.nvim.git
