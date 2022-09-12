@@ -4,6 +4,10 @@ local act = wezterm.action
 return {
   color_scheme = 'nord',
   window_background_opacity = 0.98,
+  -- use_fancy_tab_bar = false,
+
+  -- Disable annoying bell
+  audible_bell = 'Disabled',
 
   -- Font
   font = wezterm.font 'FiraCode Nerd Font',
@@ -11,11 +15,12 @@ return {
 
   -- Key Mappings
   disable_default_key_bindings = true,
-  leader = { key = 'Space', mods = 'CTRL' },
+  leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 1000 },
   keys = {
     -- reload configuration
     { key = 'r', mods = 'LEADER', action = act.ReloadConfiguration },
-    -- window new/fullscreen/find_mode/copy_mode
+    { key = 'l', mods = 'LEADER', action = act.ShowLauncher },
+    -- window new/fullscreen/find_mode/copy_mod
     { key = 'N', mods = 'CTRL|SHIFT', action = act.SpawnWindow },
     { key = 'F', mods = 'CTRL|SHIFT', action = act.Search { CaseSensitiveString = "" } },
     { key = 'X', mods = 'CTRL|SHIFT', action = act.ActivateCopyMode },
@@ -26,10 +31,15 @@ return {
     { key = '*', mods = 'CTRL|SHIFT', action = act.IncreaseFontSize },
     { key = '_', mods = 'CTRL|SHIFT', action = act.DecreaseFontSize },
     { key = '=', mods = 'CTRL|SHIFT', action = act.ResetFontSize },
+    -- tab navigation
+    { key = 'L', mods = 'CTRL|SHIFT', action = act.ShowTabNavigator },
+    { key = 'T', mods = 'CTRL|SHIFT', action = act.SpawnTab 'CurrentPaneDomain' },
+    { key = 'Tab', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) },
+    { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
     -- pane zoom toggle
     { key = 'Enter', mods = 'ALT|SHIFT', action = act.TogglePaneZoomState },
     -- pane split
-    { key = 'S', mods = 'ALT|SHIFT', action = act.SplitPane { direction = 'Down' } },
+    { key = 'X', mods = 'ALT|SHIFT', action = act.SplitPane { direction = 'Down' } },
     { key = 'V', mods = 'ALT|SHIFT', action = act.SplitPane { direction = 'Right' } },
     -- pane navigation
     { key = 'H', mods = 'ALT|SHIFT', action = act.ActivatePaneDirection 'Left' },
@@ -41,9 +51,8 @@ return {
     { key = 'RightArrow', mods = 'ALT|SHIFT', action = act.AdjustPaneSize { 'Right', 1 } },
     { key = 'UpArrow', mods = 'ALT|SHIFT', action = act.AdjustPaneSize { 'Up', 1 } },
     { key = 'DownArrow', mods = 'ALT|SHIFT', action = act.AdjustPaneSize { 'Down', 1 } },
-    -- tab navigation
-    { key = 'F9', mods = 'LEADER', action = act.ShowTabNavigator },
-    { key = '{', mods = 'ALT', action = act.ActivateTabRelative(-1) },
-    { key = '}', mods = 'ALT', action = act.ActivateTabRelative(1) },
+    -- Project navigation
+    { key = 'w', mods = 'LEADER', action = act.SpawnCommandInNewTab { cwd = os.getenv('HOME') .. '/work', domain = 'CurrentPaneDomain', args = { 'folder-picker' } } },
+    { key = 'g', mods = 'LEADER', action = act.SpawnCommandInNewTab { cwd = os.getenv('HOME') .. '/git', domain = 'CurrentPaneDomain', args = { 'folder-picker' } } },
   },
 }
