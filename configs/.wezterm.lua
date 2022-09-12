@@ -3,8 +3,8 @@ local act = wezterm.action
 
 return {
   color_scheme = 'nord',
+  font_size = 11,
   window_background_opacity = 0.98,
-  -- use_fancy_tab_bar = false,
 
   -- Disable annoying bell
   audible_bell = 'Disabled',
