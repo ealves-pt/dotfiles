@@ -23,3 +23,5 @@
   branch = false
   log = false
   tag = false
+[init]
+	defaultBranch = main

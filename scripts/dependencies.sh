@@ -13,7 +13,7 @@ sudo apt-get install -y \
   tmux \
   bison \
   fzf \
-  silversearcher-ag \
+  ripgrep \
   python3 \
   python3-pip \
   apt-transport-https \
@@ -22,13 +22,11 @@ sudo apt-get install -y \
   conky \
   neofetch \
   flameshot \
-  fonts-firacode \
   gnome-tweaks \
   lsb-core \
   lm-sensors \
   slack \
   direnv \
-  ripgrep \
   fzy \
   bat
 
