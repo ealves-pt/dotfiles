@@ -10,7 +10,7 @@
     - ~/git
     - ~/work
 
-# # install basics
+# install basics
 - shell:
     - description: update submodules
       command: git submodule update --init
@@ -33,9 +33,6 @@
       create: true
       force: true
       path: configs/alacritty.yml
-    ~/.config/nvim:
-      force: true
-      path: submodules/init.nvim
     ~/.gitconfig:
       force: true
       path: configs/.gitconfig
@@ -49,33 +46,40 @@
       force: true
       path: bin/folder-picker.sh
 
+# nvim setup
+- shell:
+  - description: install nvim
+    command: ./scripts/nvim.sh
+- link:
+    ~/.config/nvim:
+      force: true
+      path: ~/git/init.nvim
+
 # install other dependencies
 - shell:
-    - description: install docker (restart required)
-      command: ./scripts/docker.sh
-    - description: install Go with multi-environment support
-      command: ./scripts/go.sh
-      stdout: true
-    - description: install Node with multi-environment support
-      command: ./scripts/node.sh
-      stdout: true
-    - description: install gcloud and kubectl
-      command: ./scripts/gcloud.sh
-    - description: install alacritty
-      command: ./scripts/alacritty.sh
-    - description: install nvim
-      command: ./scripts/nvim.sh
-    - description: install code
-      command: ./scripts/code.sh
-    - description: install dbeaver
-      command: ./scripts/dbeaver.sh
-    - description: install spotify
-      command: ./scripts/spotify.sh
-    - description: install pritunl
-      command: ./scripts/pritunl.sh
-    - description: install 1password
-      command: ./scripts/1password.sh
-    - description: install papirus icons
-      command: ./scripts/papirus.sh
-    - description: create .gitconfig_local
-      command: if [ ! -f ~/.gitconfig_local ]; then touch ~/.gitconfig_local; fi
+  - description: install docker (restart required)
+    command: ./scripts/docker.sh
+  - description: install Go with multi-environment support
+    command: ./scripts/go.sh
+    stdout: true
+  - description: install Node with multi-environment support
+    command: ./scripts/node.sh
+    stdout: true
+  - description: install gcloud and kubectl
+    command: ./scripts/gcloud.sh
+  - description: install alacritty
+    command: ./scripts/alacritty.sh
+  - description: install code
+    command: ./scripts/code.sh
+  - description: install dbeaver
+    command: ./scripts/dbeaver.sh
+  - description: install spotify
+    command: ./scripts/spotify.sh
+  - description: install pritunl
+    command: ./scripts/pritunl.sh
+  - description: install 1password
+    command: ./scripts/1password.sh
+  - description: install papirus icons
+    command: ./scripts/papirus.sh
+  - description: create .gitconfig_local
+    command: if [ ! -f ~/.gitconfig_local ]; then touch ~/.gitconfig_local; fi

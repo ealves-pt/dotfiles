@@ -15,19 +15,17 @@ then
   # install providers
   pip3 install neovim
   npm i -g neovim
-
   # install nvim plugins
+
   nvim +PlugInstall +qall
 
   # symlink
   ln -s ~/.local/bin/nvim ~/.local/bin/vim
 fi
 
-if ! command -v luarocks &> /dev/null
+if [ ! -d ~/git/init.nvim ]
 then
-  curl -L https://luarocks.org/releases/luarocks-3.9.1.tar.gz -o /tmp/luarocks.tar.gz && \
-  tar -zxpf /tmp/luarocks.tar.gz -C /tmp && \
-  cd /tmp/luarocks-3.9.1 && \
-  ./configure && make && sudo make install && \
-  sudo luarocks install luasocket
+  cd ~/git
+  git clone https://github.com/ealves-pt/init.nvim.git
 fi
+
