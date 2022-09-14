@@ -57,6 +57,8 @@
 
 # install other dependencies
 - shell:
+  - description: install vivaldi browser
+    command: ./scripts/vivaldi.sh
   - description: install docker (restart required)
     command: ./scripts/docker.sh
   - description: install Go with multi-environment support
