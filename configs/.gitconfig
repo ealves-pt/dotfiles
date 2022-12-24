@@ -25,3 +25,7 @@
   tag = false
 [init]
   defaultBranch = main
+[pull]
+	rebase = true
+[advice]
+	skippedCherryPicks = false
